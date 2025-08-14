@@ -5,7 +5,6 @@ import { FaGlobe } from "react-icons/fa";
 
 const ChangeLanguage = () => {
   const [currentLocale, setLocale] = useState("");
-  console.log("🚀 ~ ChangeLanguage ~ currentLocale:", currentLocale);
   const router = useRouter();
 
   useEffect(() => {
@@ -20,15 +19,15 @@ const ChangeLanguage = () => {
   };
 
   return (
-    <div className="flex items-center gap-1 cursor-pointer text-black dark:text-white">
-      <button
-        onClick={() => changeLang(currentLocale === "en" ? "ar" : "en")}
-        className="cursor-pointer"
-      >
+    <button
+      onClick={() => changeLang(currentLocale === "en" ? "ar" : "en")}
+      className="flex items-center gap-1 cursor-pointer text-black dark:text-white"
+    >
+      <span>
         <FaGlobe size={21} />
-      </button>
-      {currentLocale === "en" ? "ar" : "en"}
-    </div>
+      </span>
+      <span>{currentLocale === "en" ? "ar" : "en"}</span>
+    </button>
   );
 };
 
