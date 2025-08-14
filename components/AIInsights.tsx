@@ -299,7 +299,7 @@ const AIInsights = () => {
                     {insight.message}
                   </p>
                   {insight.action && (
-                    <div className="text-left">
+                    <div className="text-start">
                       <span
                         onClick={() => handleActionClick(insight)}
                         className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg font-medium text-xs cursor-pointer transition-all duration-200 ${getButtonColors(

@@ -10,9 +10,12 @@ import {
   AiOutlineInfoCircle,
   AiOutlinePhone,
 } from "react-icons/ai";
+import ChangeLanguage from "./ChangeLanguage";
+import { useTranslations } from "next-intl";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations("navbar");
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -39,8 +42,8 @@ export default function Navbar() {
                 </span>
               </div>
               <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-clip-text text-transparent">
-                <span className="hidden sm:inline">ExpenseTracker AI</span>
-                <span className="sm:hidden">ExpenseTracker</span>
+                <span className="hidden sm:inline">{t("logoFull")}</span>
+                <span className="sm:hidden">{t("logoShort")}</span>
               </span>
             </Link>
           </div>
@@ -51,7 +54,7 @@ export default function Navbar() {
               href="/"
               className="relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
             >
-              <span className="relative z-10">Home</span>
+              <span className="relative z-10">{t("home")}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
             </Link>
 
@@ -59,7 +62,7 @@ export default function Navbar() {
               href="/about"
               className="relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
             >
-              <span className="relative z-10">About</span>
+              <span className="relative z-10">{t("about")}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
             </Link>
 
@@ -67,7 +70,7 @@ export default function Navbar() {
               href="/contact"
               className="relative text-gray-700 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 px-3 lg:px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:bg-emerald-50/50 dark:hover:bg-emerald-900/20 group"
             >
-              <span className="relative z-10">Contact</span>
+              <span className="relative z-10">{t("contact")}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-green-500/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
             </Link>
           </div>
@@ -75,7 +78,7 @@ export default function Navbar() {
           {/* Right Section */}
           <div className="flex items-center space-x-1 sm:space-x-2">
             {/* Theme Toggle */}
-            <div className="p-0.5 sm:p-1">
+            <div className="p-0.5 sm:p-1 flex items-center">
               <ThemeToggle />
             </div>
 
@@ -85,7 +88,7 @@ export default function Navbar() {
                 <SignInButton>
                   <button className="relative overflow-hidden bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 hover:from-emerald-600 hover:via-green-600 hover:to-teal-600 text-white px-3 sm:px-4 py-2 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95">
                     <div className="relative z-10 flex items-center gap-1 sm:gap-2">
-                      <span>Sign In</span>
+                      <span>{t("signIn")}</span>
                       <HiOutlineLogout className="w-3 h-3 sm:w-4 sm:h-4" />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
@@ -116,6 +119,7 @@ export default function Navbar() {
             >
               {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
             </button>
+            <ChangeLanguage />
           </div>
         </div>
 
@@ -137,7 +141,7 @@ export default function Navbar() {
               <span className="text-base">
                 <AiOutlineHome />
               </span>
-              <span>Home</span>
+              <span>{t("home")}</span>
             </Link>
             <Link
               href="/about"
@@ -147,7 +151,7 @@ export default function Navbar() {
               <span className="text-base">
                 <AiOutlineInfoCircle />
               </span>
-              <span>About</span>
+              <span>{t("about")}</span>
             </Link>
             <Link
               href="/contact"
@@ -157,7 +161,7 @@ export default function Navbar() {
               <span className="text-base">
                 <AiOutlinePhone />
               </span>
-              <span>Contact</span>
+              <span>{t("contact")}</span>
             </Link>
 
             {/* Mobile Authentication */}
@@ -168,7 +172,7 @@ export default function Navbar() {
                     className="w-full bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 hover:from-emerald-600 hover:via-green-600 hover:to-teal-600 text-white px-4 py-3 rounded-xl text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 active:scale-95"
                     onClick={closeMobileMenu}
                   >
-                    <span>Sign In</span>
+                    <span>{t("signIn")}</span>
                     <HiOutlineLogout className="w-4 h-4" />
                   </button>
                 </SignInButton>

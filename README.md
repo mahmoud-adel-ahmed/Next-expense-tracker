@@ -186,6 +186,14 @@ View the complete database diagram: [Eraser Diagram](https://app.eraser.io/works
 - **[Tailwind CSS](https://tailwindcss.com)** - Styling framework
 - **[Vercel Platform](https://vercel.com)** - Deployment platform
 
+### Localization
+
+- Translations are stored in the `messages` folder as JSON files
+- Example:
+  - `en.json` for English
+  - `ar.json` for Arabic
+- The app automatically applies RTL direction and Tajawal font when Arabic is selected
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.

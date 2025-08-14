@@ -12,7 +12,13 @@ export default function ThemeToggle() {
   }, []);
 
   if (!isMounted) {
-    return null;
+    return (
+      <div className="relative w-14 h-8 bg-gradient-to-r from-emerald-200/80 to-green-200/80 dark:from-emerald-900/80 dark:to-green-900/80 backdrop-blur-sm rounded-full shadow-lg border border-emerald-200/50 dark:border-emerald-700/50">
+        <div className="absolute top-0.5 left-0.5 w-7 h-7 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center transition-all duration-300">
+          <span className="text-sm">🌙</span>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -28,8 +34,8 @@ export default function ThemeToggle() {
       <div
         className={`absolute top-0.5 w-7 h-7 bg-white dark:bg-gray-800 rounded-full shadow-md flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 ${
           theme === "light"
-            ? "left-0.5 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-800 dark:to-gray-700"
-            : "left-6 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-gray-700 dark:to-gray-800"
+            ? "start-0.5 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-800 dark:to-gray-700"
+            : "start-6 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-gray-700 dark:to-gray-800"
         }`}
       >
         <span

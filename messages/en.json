@@ -1,0 +1,10 @@
+{
+  "navbar": {
+    "logoFull": "ExpenseTracker AI",
+    "logoShort": "ExpenseTracker",
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "signIn": "Sign In"
+  }
+}
